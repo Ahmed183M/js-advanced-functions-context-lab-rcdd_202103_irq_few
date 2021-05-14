@@ -161,8 +161,9 @@ describe("The payroll system", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
         createTimeInEvent.call(cRecord, "44-03-15 0900")
         createTimeOutEvent.call(cRecord, "44-03-15 1100")
-        expect(wagesEarnedOnDate.call(cRecord, "44-03-15")).to.equal(NaN)
+        expect(wagesEarnedOnDate.call(cRecord, "44-03-15")).to.equal(54)
       })
+
     })
   })
 
