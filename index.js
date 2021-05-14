@@ -71,7 +71,7 @@ function hoursWorkedOnDate(date){
 }
 
 function wagesEarnedOnDate(date){
-  return hoursWorkedOnDate.bind(this.date)*this.payPerHour;
+  return hoursWorkedOnDate.call(date)*this.payPerHour;
 }
 
 function findEmployeeByFirstName(srcArray, firstName){
