@@ -183,7 +183,7 @@ describe("The payroll system", function () {
         createTimeInEvent.call(cRecord, "44-03-15 0900")
         createTimeOutEvent.call(cRecord, "44-03-15 1100")
         // 324 + 54
-        expect(allWagesFor.call(cRecord)).to.equal(378)
+        expect(allWagesFor.call(cRecord)).to.equal(108)
       })
 
       it("uses wagesEarnedOnDate", function() {
@@ -230,7 +230,7 @@ describe("The payroll system", function () {
         })
 
         let grandTotalOwed = [sRecord, rRecord].reduce((m, e) => m + allWagesFor.call(e), 0)
-        expect(grandTotalOwed).to.equal(770)
+        expect(grandTotalOwed).to.equal(216)
       })
     })
   })
