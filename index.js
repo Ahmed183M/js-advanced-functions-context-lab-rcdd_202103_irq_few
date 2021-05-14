@@ -63,7 +63,7 @@ function createTimeOutEvent(date){
   return this;
 }
 
-function hoursWorkedOnDate(date){
+function hoursWorkedOnDate(date, employeeRecord){
   const foundTimeOut = this.timeOutEvents.find(timeOut => timeOut.date == date);
   const foundTimeIn = this.timeInEvents.find(timeOut => timeOut.date == date);
   const workedHours = (foundTimeOut.hour - foundTimeIn.hour)/100;
@@ -71,7 +71,7 @@ function hoursWorkedOnDate(date){
 }
 
 function wagesEarnedOnDate(date){
-  return hoursWorkedOnDate.bind(date)*this.payPerHour;
+  return hoursWorkedOnDate(date, this)*this.payPerHour;
 }
 
 function findEmployeeByFirstName(srcArray, firstName){
