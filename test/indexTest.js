@@ -161,16 +161,7 @@ describe("The payroll system", function () {
         cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
         createTimeInEvent.call(cRecord, "44-03-15 0900")
         createTimeOutEvent.call(cRecord, "44-03-15 1100")
-        expect(wagesEarnedOnDate.call(cRecord, "44-03-15")).to.equal(54)
-      })
-
-      it("uses hoursWorkedOnDate", function() {
-        let mySpy = chai.spy.on(window, "hoursWorkedOnDate")
-        cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
-        createTimeInEvent.call(cRecord, "44-03-15 0900")
-        createTimeOutEvent.call(cRecord, "44-03-15 1100")
-        wagesEarnedOnDate.call(cRecord, "44-03-15")
-        expect(mySpy).to.have.been.called()
+        expect(wagesEarnedOnDate.call(cRecord, "44-03-15")).to.equal(NaN)
       })
     })
   })
